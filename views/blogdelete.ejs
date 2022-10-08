@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head.ejs') %>
+</head>
+<body>
+    <%- include('./partials/nav.ejs') %>
+    <div class="details">
+      <div class="image">
+        <img src="data:image/<%=blog.image.contentType%>;base64,
+        <%=blog.image.data.toString('base64')%>" >
+      </div>
+
+      <div class="details content"> <ul>
+    <li>   <h2><%= blog.title %></h2></li> 
+      <li> <a data-doc="<%= blog._id %>" class="trash"><i class="fa fa-trash"></i></a></li> </ul>
+        <div class="content">
+          <p><%= blog.body %></p>
+        </div>
+        </div>
+      </div>
+    <%- include('./partials/footer.ejs') %>
+<style>
+  ul{ transform: translateX(-90%);
+    list-style: none;
+  }
+  li{display: inline-block;
+margin-left: 500px;}
+  .details{transform: translate(20%,40%);
+   
+        position: relative;
+    }
+    .trash {
+
+     
+ margin-top: 50px;text-decoration: none;
+ display: inline-block;
+ padding:15px 20px;
+ border:1px solid red;
+ color:red;
+ font-size: 16px;
+ background-color: #fff;
+ cursor: pointer;
+}
+/* Change the link color to #111 (black) on hover */
+.trash:hover {
+background-color: red;
+border-color: red;
+color:#fff;
+}
+    body{
+      max-width: 1200px;
+      margin: 20px auto;
+      padding: 0 20px;
+      font-family: 'Noto Serif', serif;
+      max-width: 1200px;
+    }
+    .content{
+      margin-left: 20px;
+      font-size: 25px;
+    }
+    h2{font-weight: bold;
+      font-size: 40px;
+    
+   }
+      .image{
+        justify-content: center;
+        align-items: center;
+ 
+       width:100%;
+       height:100vh;
+        
+      }
+</style>
+<script>
+    const trashcan=document.querySelector('.trash');
+  
+   trashcan.addEventListener('click',(e)=>{
+      const endpoint=`/Admin-News/${trashcan.dataset.doc}`;
+      fetch(endpoint,{method:'DELETE'})
+      .then(response=>response.json())
+      .then(()=>{window.location.href='http://localhost:3000/Admin-News';
+  
+      } ).catch(err=>console.log(err));
+    })
+  </script>
+  
+</body>
+
+</html>

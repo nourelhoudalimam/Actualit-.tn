@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partials/head.ejs') %>
+  <body>
+    <%- include('./partials/nav.ejs') %>
+    <div class="titles">
+    <ul>
+ <li>  <p> Toutes les actualités</p></li>
+<li>  <a href="/Admin-add" class="delete"><i class="fa fa-plus"></i></a></li></ul></div>
+
+<section class="articles">
+    
+  <% if(blogs.length>0) { %>
+          <% blogs.forEach(blog=>{ %>
+            <a class="single" href="/Admin-News/<%= blog._id %>">
+     <div class="article">
+     
+      <div class="left">
+       <img src="data:image/<%=blog.image.contentType%>;base64,
+    <%=blog.image.data.toString('base64')%>" >
+      </div>
+      <div class="right">
+          <h1 class="title"> <%= blog.title %></h1> 
+     <p class="snippet"><%= blog.snippet %></p>
+           <p class="body"><%= blog.body %></p></a>
+  </div>  </div>
+ <% }) %>
+            <% } else { %>
+  <p class="error">Pas d'actualités à afficher .....</p>
+  <% } %>
+     </section>
+      <%- include('./partials/footer.ejs') %>
+<style>
+ *{padding:0;
+margin:0;
+box-sizing: border-box;}
+ .art{display: flex;}
+  ul{transform: translate(-23%,150%);
+    list-style: none;
+  }
+  li{display: inline-block;
+  margin-left: 430px;}
+  .titles      p{
+    color:hsl(240, 4%, 10%);
+  font-size: 30px;
+  margin-block-end: 60px;
+  max-width: max-content;
+  text-align: left;
+  margin-inline: auto;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  position: relative;
+  }
+  .right h1:hover
+  {
+      color: crimson;
+    }
+  .right h1{cursor: pointer;}
+  .error{
+    transform: translateY(500%);
+    font-weight: 700;
+    font-size: 30px;
+  }
+ 
+
+  .title { font-weight: 700;
+    font-size: 30px;font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color:black}
+.titles p::before{
+
+    content: "";
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 6px;
+    background-image: linear-gradient(90deg, red,red);
+   
+
+
+ }
+ .titles{transform: translateY(-50%);}
+ li a,.trash {
+ 
+          
+ margin-top: 50px;text-decoration: none;
+ display: inline-block;
+ padding:15px 20px;
+ border:1px solid red;
+ color:red;
+ font-size: 16px;
+ background-color: #fff;
+ cursor: pointer;
+}
+.trash{transform: translateX(1390%);}
+/* Change the link color to #111 (black) on hover */
+li a:hover,.trash:hover {
+background-color: red;
+border-color: red;
+color:#fff;
+}
+h1:hover{color:crimson}
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@600&display=swap');
+body{
+  margin: 10px 80px;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+a{text-decoration: none;}
+.articles{
+  margin-top: 30px;
+  display: block;
+}
+.articles .article{
+  display:flex;
+  flex-wrap:wrap;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  transform: translateY(80%);
+  border:3px solid rgb(202, 196, 196);
+ 
+}
+.right {  display: block;
+      margin: 40px 0;
+      padding-left: 30px;
+      border-left: 6px solid crimson;
+      margin-left: 20px;}
+.articles .article .left img{
+  height: 300px;
+  width: 500px;
+
+}
+.articles .article .right {
+  margin-left: 40px;
+  max-width: 50%;
+}
+.articles .article .right p.snippet{
+  color: #7f7e7e;
+}
+.articles .article .right p.body{
+  color: #2d2d2d;
+}
+.articles .article .right p.title{
+ font-family: 'Crimson Text', serif;
+  font-size: 30px;
+}
+@media screen and (max-width: 640px){
+  body{
+    margin: 10px 20px;
+  }
+ 
+  .articles .article .left img{
+    height: 100%;
+    width:100%;
+  }
+  .articles .article .right{
+    margin: 0px;
+    max-width: 100%;
+  }
+ 
+}
+
+ 
+ 
+
+</style>
+
+
+  </body>
+  </html >

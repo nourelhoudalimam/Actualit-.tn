@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partials/head.ejs') %>
+  <body>
+    <%- include('./partials/nav.ejs') %>
+    <div class="text-center center-div mt-5" id="login">
+      <div class="container w-25 border py-5 mt-5">
+          <h3>Bienvenue au tableau de bord de site Actualite.tn</h3>
+          <h5>cher administrateur</h5>
+          <ul>
+            <li><a class="button" href="/Admin-add">Ajouter une actualité</a></li>
+            <li><a class="button" href="/Admin-news" >Les actualités</a></li>
+          </ul>
+          <a href="/router/logout" class="logout">Logout</a>
+      </div>
+  </div>
+      <%- include('./partials/footer.ejs') %>
+      <style>
+        .logout{text-decoration: none;
+          transform: translate(-15%,-50%);
+    margin-top: 50px;text-decoration: none;
+    display: inline-block;
+    padding:13px 30px;
+    border:1px solid rgb(95, 96, 97);
+    color:rgb(95, 96, 97);
+    font-size: 16px;
+    background-color: #fff;
+    cursor: pointer;
+    border-radius: 30px;
+  }
+  .text-center{transform: translateY(40%);
+    background-image: url('/public/back.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.button{text-decoration: none;
+          
+    margin-top: 50px;text-decoration: none;
+    display: inline-block;
+    padding:15px 20px;
+    border:1px solid red;
+    color:red;
+    font-size: 16px;
+    background-color: #fff;
+    cursor: pointer;}
+ul{
+list-style: none;}
+li{display: inline-block;margin-right: 10px;}
+  .button:hover{
+    background-color: red;
+    border-color: red;
+    color:#fff;
+  }
+  .logout:hover{    background-color:rgb(95, 96, 97) ;
+    border-color:rgb(95, 96, 97) ;
+    color:#fff;}
+  .text-center{
+    transform: translateY(50%);
+  }
+
+             .titles{
+    color:hsl(240, 4%, 10%);
+  font-size: 30px;
+  margin-block-end: 60px;
+  max-width: max-content;
+  text-align: left;
+  margin-inline: auto;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  position: relative;transform:translate(-330%,700%)
+  }
+ .titles::before{
+
+    content: "";
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 6px;
+    background-image: linear-gradient(90deg, red,red);
+   
+
+
+ }
+      </style>
+  </body>
+  </html >
+
+

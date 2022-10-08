@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partials/head.ejs') %>
+  <body>
+    <%- include('./partials/nav.ejs') %>
+    <div class="titles">
+      A propos de nous
+    </div>
+    <div class="news-content">
+     Le site Actualité.tn est un site qui couvre les actualités de la Tunisie, crée en Octobre 2022 par Nour el Houda Limam
+    </div>
+      <%- include('./partials/footer.ejs') %>
+  <style>
+         .titles{
+    color:hsl(240, 4%, 10%);
+  font-size: 30px;
+  margin-block-end: 60px;
+  max-width: max-content;
+  text-align: left;
+  margin-inline: auto;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  position: relative;transform:translate(-400%,700%)
+  }
+ .titles::before{
+
+    content: "";
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 6px;
+    background-image: linear-gradient(90deg, red,red);
+   }
+
+   .news-content{
+    font-size: 25px;
+    transform: translate(5%,800%);
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 500;
+   }
+  </style>
+    </body>
+  </html >
+
+

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('./partials/head.ejs') %>
+  <body>
+    <%- include('./partials/nav.ejs') %>
+    <section class="hero" id="home">
+      <div class="container">
+
+        <div class="hero-content">
+
+          <h1 class="h1 hero-title">Votre site d'actualité sur toute la Tunisie</h1>
+
+          <div class="hero-text">
+           Actualité.tn  est un journal en ligne qui couvre l'actualité tunisienne sous l'angle libéral.
+          </div>
+
+          <a class="btn" href="/Admin-login">Espace de l'administrateur</a>
+
+        </div>
+
+        <div class="hero-banner"></div>
+
+      </div>
+      <img src="/public/home.jpg" alt="shape" class="shape-content">
+    </section>
+
+
+
+
+      <%- include('./partials/footer.ejs') %>
+  </body>
+  <style>
+    
+    .hero {
+  position: relative;
+  padding: 130px 0 140px;
+  z-index: 1;transform: translate(-20%,100%);
+}
+
+.hero-content { text-align: center; }
+
+.hero-title { margin-bottom: 40px;transform: translate(-25%,-250%);color:#333;
+font-size: 40px; font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif ;}
+
+.hero-text {margin-bottom: 40px;transform: translate(7%,-150%);white-space: wrap;
+  font-size: 23px;width:700px;margin-top: 20px;
+  color:  hsl(231, 100%, 8%);font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+
+.hero .btn{
+ transform: translate(-135%,-150%);
+    margin-top: 20px;text-decoration: none;
+    display: inline-block;
+    padding:13px 30px;
+    border:1px solid red;
+    color:red;
+    font-size: 16px;
+    background-color: #fff;
+    cursor: pointer;
+    border-radius: 30px;
+  }
+
+  .hero .btn:hover{
+    background-color: red;
+    border-color: red;
+    color:#fff;
+  }
+
+ 
+
+.hero-banner { display: none; }
+
+.shape-content {
+  position: absolute;
+  width: 900px;
+  top: -230px;
+  right: -300px;
+  z-index: -1;
+}
+
+.container { padding: 0 15px;  }
+@media (min-width: 450px) {
+
+/**
+ * CUSTOM PROPERTY 
+ */
+
+
+
+
+
+/**
+ * REUESED STYLE 
+ */
+
+.h1,
+.h2 { font-weight: 700; }
+
+.btn { padding-block: 15px; }
+
+
+
+/**
+ * HEADER 
+ */
+
+
+
+
+/**
+ * HERO 
+ */
+
+.hero { padding: 140px 0 160px; }
+
+.shape-content {
+  top: -70px;
+  right: -260px;
+}}
+
+
+  </style>
+  </html >

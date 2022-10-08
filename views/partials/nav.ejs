@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    
+<header class="header">
+
+    <a href="/" class="logo">  Actualité<p>.tn</p> </a>
+ 
+    <nav class="navbar">
+        <a href="/">Acceuil</a>
+        <a href="/All-News">Les actualités</a>
+        <a href="/About-us">A propos de nous</a>
+
+        
+       
+    </nav>
+ 
+    <div id="menu-btn" class="fa fa-bars" (click)="onResp()">
+       
+    </div>
+ 
+ </header>
+ <style>
+    .header{
+      padding: 2% 5rem;
+      position: fixed;
+      top:0; left: 0; right: 0;
+      z-index: 1000;
+      box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .1);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background:  rgba(255, 255, 255, 0.178);
+    
+    }
+    
+    .header .logo{
+      font-size: 2.5rem;
+      color: #333;font-family: fantasy;
+      display: flex;text-decoration: none;
+    }
+    
+    .header a {white-space: nowrap;}
+    .header .logo p{
+      color: red;
+    }
+    
+    .header .navbar a{text-decoration: none;
+      font-size: 1.7rem;
+      color: rgb(66, 64, 64);
+      margin-left: 2rem;font-family:Arial, Helvetica, sans-serif;
+    }
+    
+    .header .navbar a:hover{
+      color: red;
+    }
+    .header .navbar .button{
+      border: none;
+      outline: none;
+      background-color: #ff5360;
+      color: #fff;
+      padding: 9px 16px;
+      font-weight: 600;
+    
+      letter-spacing: 3px;
+      margin-right: 10px;
+      border-radius: 40px;
+    
+      cursor: pointer;
+      transition: opacity 0.9;
+    }
+    .header .navbar .button:hover{background-color:#fc2d3e;
+    color: #fff;}
+    
+    #menu-btn{
+      font-size: 2.5rem;
+      border-radius: .5rem;
+      background: #eee;
+      color:#999;
+      padding: 1rem 1.5rem;
+      cursor: pointer;
+      display: none;
+    }
+    @media (max-width:1100px){
+    
+      #menu-btn{
+          display: initial;
+      }
+    
+      .header .navbar{
+          position: absolute;
+          top:115%; right: 2rem;
+          border-radius: .5rem;
+          box-shadow: #999;
+          width: 30rem;
+          border: var(--border);
+          background: #fff;
+          transform: scale(0);
+          opacity: 0;
+          transform-origin: top right;
+          transition: none;
+          display:block
+      }
+    
+      .header .navbar.active{
+          transform: scale(1);
+          opacity: 1;
+          transition: .2s ease-out;
+    
+      }
+    
+      .header .navbar a{
+          font-size: 2rem;
+          display: block;
+          margin:2.5rem;
+      }
+      .header .navbar .button{
+              width:130px;
+    
+      }
+    
+    }
+    @media (max-width:450px){
+    
+    
+    
+      .header{
+          padding: 2rem;
+      }
+    }
+    
+ </style>
+ </body>
+
+
+</html >
